@@ -1,0 +1,93 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@import "grid";
+
+//Colors
+$colorDefault: #000000;
+$colorBorder: #f2f2f2;
+$colorAccent: #1ABC9C;
+$colorText: #666666;
+
+/* Default
+=================================*/
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  line-height: 26px;
+  color: $colorText;
+}
+img {
+  display: block;
+}
+h1, h2, h3, h4, h5 {
+  text-transform: uppercase;
+  color: $colorDefault;
+}
+ul, ol {
+  padding-left: 30px;
+}
+
+/* Global
+=================================*/
+.btn {
+  display: inline-block;
+  padding: 10px 40px;
+  font-size: 14px;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 700;
+  color: #fff;
+  background: $colorAccent;
+  border-radius: 2px;
+  border: 0;
+  cursor: pointer;
+  appearance: none;
+  &:hover {
+    opacity: 0.75;
+  }
+}
+
+/* Header
+=================================*/
+.header {
+  margin-bottom: 40px;
+  padding: 20px;
+  border-bottom: 1px solid $colorBorder;
+}
+.logo {
+  display: inline-block;
+}
+.nav-left {
+  .nav-link {
+    margin-right: 10px;
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+}
+.nav-right {
+  .nav-link {
+    margin-left: 10px;
+    &:first-of-type {
+      margin-left: 0;
+    }
+  }
+}
+.nav-link {
+  display: inline-block;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $colorDefault;
+  &:hover {
+    color: $colorAccent;
+  }
+}
+
+/* Product
+=================================*/
+.product-title {
+  font-weight: 800;
+}

@@ -1,0 +1,44 @@
+---
+hide_body: false
+fields:
+- type: text
+  name: layout
+  label: Layout
+  description: The layout of the page
+  hidden: ''
+  config:
+    required: true
+  default: product
+- type: text
+  label: ID
+  name: id
+  description: The product id
+- type: text
+  name: title
+  label: Title
+  description: The product title
+- type: number
+  name: price
+  label: Price
+  description: The product price
+- type: file
+  name: image
+  label: Image
+  description: The product main image
+- type: field_group_list
+  name: variants
+  label: Variants
+  description: The product variants
+  fields:
+  - type: text
+    name: variant_title
+    label: Variant title
+    description: The title of the variant
+  - type: number
+    name: variant_price
+    label: Variant price
+    description: The price of the variant
+  - type: file
+    name: variant_image
+    label: Variant image
+    description: The image of the variant
