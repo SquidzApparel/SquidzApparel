@@ -17,6 +17,16 @@ layout: default
       <div class="product-form">
         <h2>${{ productPrice }}</h2>
         <button id="checkout" class="btn btn-buy-now">Buy Now</button>
+        <button
+        class="snipcart-add-item"
+        data-item-id="sa_00001"
+        data-item-name="{{ product.title | escape }}"
+        data-item-price="{{ productPrice }}.00"
+        data-item-url="{{ product.url }}"
+        data-item-description="{{ content }}">
+            Buy now 2
+    </button>
+    
       </div>
     </div>
   </div>
