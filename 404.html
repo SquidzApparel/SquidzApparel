@@ -14,13 +14,19 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i" rel="stylesheet">
   <link rel="stylesheet" href="/assets/main.css">
   <link rel="canonical" href="https://squidzapparel.com/404.html">
-  <link href="https://cdn.snipcart.com/themes/2.0/base/snipcart.min.css" rel="stylesheet" type="text/css" />
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://cdn.snipcart.com/scripts/2.0/snipcart.js" id="snipcart" data-api-key="MTI3YzY1YTMtNTk1OS00MmYwLTg4NmQtZjY3NDVhZGQzMDA0NjM2NDIyMDA5MDAwMzA0ODIx"></script>
-  <script src="https://checkout.stripe.com/checkout.js"></script>
+  <script src="http://sdks.shopifycdn.com/js-buy-sdk/v0/latest/shopify-buy.umd.polyfilled.min.js"></script>
   
   
+
+  <script>
+var shopClient = ShopifyBuy.buildClient({
+  accessToken: 'a00820dc71495fc3fd49f42c77a95ec1',
+  domain: 'squidz-apparel.myshopify.com',
+  appId: '1842049'
+});
+</script>
 </head>
 
 
