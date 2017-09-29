@@ -1873,16 +1873,21 @@ html.lte-ie9 [class*='grid'] > [class*="col-12"] {
 /* Default
 =================================*/
 body {
+  margin: 0;
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 26px;
-  color: #666666; }
+  color: #666666;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
 
 img {
   display: block; }
 
 h1, h2, h3, h4, h5 {
+  font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
+  font-weight: 800;
   color: #000000; }
 
 ul, ol {
@@ -1894,9 +1899,10 @@ ul, ol {
   display: inline-block;
   padding: 10px 40px;
   font-size: 14px;
+  font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
   text-align: center;
-  font-weight: 700;
+  font-weight: 800;
   color: #fff;
   background: #1ABC9C;
   border-radius: 2px;
@@ -1914,7 +1920,9 @@ ul, ol {
   border-bottom: 1px solid #f2f2f2; }
 
 .logo {
-  display: inline-block; }
+  display: block; }
+  .logo img {
+    margin: 0 auto; }
 
 .nav-left .nav-link {
   margin-right: 10px; }
@@ -1928,7 +1936,8 @@ ul, ol {
 
 .nav-link {
   display: inline-block;
-  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
   text-decoration: none;
   text-transform: uppercase;
   color: #000000; }
