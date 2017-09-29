@@ -83,11 +83,9 @@ var shopClient = ShopifyBuy.buildClient({
     </div>
   </div>
 
-  <h1></h1>
-
 </div>
 <script>
-shopClient.fetchProduct('/products/second-product')
+shopClient.fetchProduct('')
 .then(function (product) {
   console.log('product', product);
 })
