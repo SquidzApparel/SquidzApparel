@@ -1,10 +1,10 @@
 ---
-title: Squid Invader Hat
-layout: product
 date: 2017-09-26 22:28:09 +0000
-price: ''
 id: 128055509021
 image: ''
+layout: product
+price: 3000
+title: Squid Invader Hat
 variants: []
 ---
 
