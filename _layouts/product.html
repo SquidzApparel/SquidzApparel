@@ -20,11 +20,9 @@ layout: default
     </div>
   </div>
 
-  <h1>{{page.product_id}}</h1>
-
 </div>
 <script>
-shopClient.fetchProduct('{{ product.id }}')
+shopClient.fetchProduct('{{ product.product_id }}')
 .then(function (product) {
   console.log('product', product);
 })
