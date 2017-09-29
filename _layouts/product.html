@@ -16,67 +16,17 @@ layout: default
       </div>
       <div class="product-form">
         <h2>${{ productPrice }}</h2>
-        <button id="checkout" class="btn btn-buy-now">Buy Now</button>
-        <button
-        class="snipcart-add-item"
-        data-item-id="sa_00001"
-        data-item-name="{{ product.title | escape }}"
-        data-item-price="{{ productPrice }}.00"
-        data-item-url="{{ product.url }}"
-        data-item-description="{{ content }}">
-            Buy now 2
-    </button>
-    
       </div>
     </div>
   </div>
 
 </div>
 <script>
-var handler = StripeCheckout.configure({
-  key: 'pk_test_3OU8GKAVPeVzz4XHKbBIOOtQ',
-  image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
-  locale: 'auto',
-  billingAddress: true,
-  shippingAddress: true,
-  token: function(token) {
-    var payload = {
-      amount: '{{ page.price }}' * 1,
-      description: 'Navy',
-      stripeToken: token.id,
-      stripeTokenType: token.type,
-      stripeEmail: token.email
-    }
-    $.ajax({
-      type: 'POST',
-      url: 'https://squidz-checkout.herokuapp.com/',
-      crossDomain: true,
-      data: payload,
-      dataType: 'json',
-      success: function(data, textStatus, jqXHR) {
-        console.log(data, textStatus, jqXHR)
-        //window.location.replace('/success');
-      },
-      error: function(jqXHR, textStatus, errorThrown) {
-        console.log(jqXHR, textStatus, errorThrown)
-        //window.location.replace('/error');
-      }
-    });
-  }
-});
-
-document.getElementById('checkout').addEventListener('click', function(e) {
-  // Open Checkout with further options:
-  handler.open({
-    name: '{{ page.title }}',
-    description: 'Navy',
-    amount: '{{ page.price }}' * 1
-  });
-  e.preventDefault();
-});
-
-// Close Checkout on page navigation:
-window.addEventListener('popstate', function() {
-  handler.close();
+shopClient.fetchProduct('{{ product.id }}')
+.then(function (product) {
+  console.log('product', product);
+})
+.catch(function () {
+  console.log('Request failed');
 });
 </script>
