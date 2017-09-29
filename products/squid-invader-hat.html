@@ -6,14 +6,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Squidz Apparel</title>
-  <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search resu...">
+  <title>Squid Invader Hat</title>
+  <meta name="description" content="The world is being invaded by squid aliens and you are humanity’s last hope. What’s left for you to do? Show your new cephalopod overlords that you are on th...">
 
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:800,800i" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i" rel="stylesheet">
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="https://squidzapparel.com/">
+  <link rel="canonical" href="https://squidzapparel.com/products/squid-invader-hat">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://sdks.shopifycdn.com/js-buy-sdk/v0/latest/shopify-buy.umd.polyfilled.min.js"></script>
@@ -63,41 +63,45 @@ var shopClient = ShopifyBuy.buildClient({
 
 
     <main class="content" aria-label="Content">
-      <div class="home">
+      
 
-  <h1 class="page-heading">Posts</h1>
-  
-  
+<div class="product">
 
+  <div class="grid">
+    <div class="col-6 text-center">
+      <h3>Image goes here</h3>
+    </div>
+    <div class="col-6">
+      <h1 class="product-title">Squid Invader Hat</h1>
+      <div class="content">
+        <p>The world is being invaded by squid aliens and you are humanity’s last hope. What’s left for you to do? Show your new cephalopod overlords that you are on their side of course.</p>
 
-  <ul class="post-list">
-    
-      <li>
-        <h2>
-          <a class="post-link" href="/products/squid-invader-hat">Squid Invader Hat</a>
-        </h2>
-      </li>
-    
-  </ul>
+<ul>
+  <li>Made with 85% acrylic/15% wool.</li>
+  <li>Structured, 6-panel, high-profile</li>
+  <li>Plastic snap closure</li>
+  <li>Grey under visor</li>
+  <li>6 embroidered eyelets that match crown color</li>
+  <li>Head circumference 22”-24”</li>
+</ul>
 
-  <hr />
-
-  <ul class="post-list">
-    
-      <li>
-        
-        <span class="post-meta">Sep 26, 2017</span>
-
-        <h2>
-          <a class="post-link" href="/jekyll/update/2017/09/26/welcome-to-jekyll.html">Welcome to Jekyll!</a>
-        </h2>
-      </li>
-    
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
+      </div>
+      <div class="product-form">
+        <h2>$30</h2>
+      </div>
+    </div>
+  </div>
 
 </div>
+<script>
+shopClient.fetchProduct('128055509021')
+.then(function (product) {
+  console.log('product', product);
+})
+.catch(function () {
+  console.log('Request failed');
+});
+</script>
 
     </main>
 
