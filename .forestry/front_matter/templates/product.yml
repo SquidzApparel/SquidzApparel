@@ -11,7 +11,7 @@ fields:
   default: product
 - type: text
   label: ID
-  name: id
+  name: product_id
   description: The product id
 - type: text
   name: title
