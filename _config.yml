@@ -26,7 +26,11 @@ github_username:  jekyll
 
 # Build settings
 markdown: kramdown
+port: 4002
 collections:
+  test:
+    output: true
+    permalink: /:collection/:path
   products:
     output: true
     permalink: /:collection/:path

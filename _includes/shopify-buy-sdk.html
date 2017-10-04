@@ -1,7 +1,12 @@
 <script>
 var shopClient = ShopifyBuy.buildClient({
-  accessToken: 'a00820dc71495fc3fd49f42c77a95ec1',
+  accessToken: '4d4c4181de6648ffd56fbb467fe79f37',
   domain: 'squidz-apparel.myshopify.com',
-  appId: '1842049'
+  appId: '6'
+});
+var cart;
+shopClient.createCart().then(function (newCart) {
+  cart = newCart;
+  // do something with updated cart
 });
 </script>
