@@ -18,21 +18,11 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://sdks.shopifycdn.com/js-buy-sdk/v0/latest/shopify-buy.umd.polyfilled.min.js"></script>
+  <script defer src="/assets/regular.min.js"></script>
+  <script defer src="/assets/fontawesome.js"></script>
+  <script src="/assets/scripts.js"></script>
   
   
-
-  <script>
-var shopClient = ShopifyBuy.buildClient({
-  accessToken: '4d4c4181de6648ffd56fbb467fe79f37',
-  domain: 'squidz-apparel.myshopify.com',
-  appId: '6'
-});
-var cart;
-shopClient.createCart().then(function (newCart) {
-  cart = newCart;
-  // do something with updated cart
-});
-</script>
 </head>
 
 
@@ -58,7 +48,7 @@ shopClient.createCart().then(function (newCart) {
       <div class="col-5 text-right nav-right">
         <a class="nav-link" href="/">About</a>
         <a class="nav-link" href="/">Faqs</a>
-        <a class="nav-link" href="/">Cart</a>
+        <a class="nav-link" href="/cart">Cart <div class="cart-count"></div></a>
       </div>
 
     </div>

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Squidz Apparel</title>
+  <title>Cart</title>
   <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search resu...">
 
   <link rel="icon" type="image/png" href="/favicon.png" />
@@ -14,7 +14,7 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat:800,800i" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i" rel="stylesheet">
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="https://squidzapparel.com/404.html">
+  <link rel="canonical" href="https://squidzapparel.com/cart/">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://sdks.shopifycdn.com/js-buy-sdk/v0/latest/shopify-buy.umd.polyfilled.min.js"></script>
@@ -59,26 +59,49 @@
 
 
     <main class="content" aria-label="Content">
-      <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+      <div class="cart">
+  <div class="container">
 
-<div class="container">
-  <h1>404</h1>
+    <div class="grid">
+      <div class="col-12 padding">
+        <h1>Cart</h1>
+        <p>This is the site cart</p>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
+      </div>
+    </div>
+    <div class="cart-header">
+      <div class="grid">
+        <div class="col-6">
+          <h5>Product</h5>
+        </div>
+        <div class="col-2 text-right">
+          <h5>Price</h5>
+        </div>
+        <div class="col-2 text-right">
+          <h5>Quantity</h5>
+        </div>
+        <div class="col-2 text-right">
+          <h5>Total</h5>
+        </div>
+      </div>
+    </div>
+    <div class="grid">
+      <div class="col-12" id="cart"></div>
+    </div>
+
+  </div>
 </div>
+
+<script>
+  $(function(){
+    buildCart();
+    $('#cart').on('change', '.quantity', function(){
+      var variantID = $(this).attr('data-variant-id'),
+          quantity = $(this).val();
+          addOrUpdateVariant(variantID, quantity);
+    });
+  });
+</script>
 
     </main>
 
