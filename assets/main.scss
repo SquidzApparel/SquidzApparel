@@ -5,13 +5,18 @@
 @import "grid";
 
 //Colors
-$colorDefault: #000000;
+$colorDefault: #333333;
+$colorDefaultLight: #ececec;
 $colorBorder: #f2f2f2;
 $colorAccent: #1ABC9C;
 $colorText: #666666;
+$colorSuccess: #2ecc71;
 
 /* Default
 =================================*/
+* {
+  box-sizing: border-box;
+}
 body {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
@@ -23,6 +28,7 @@ body {
 }
 img {
   display: block;
+  max-width: 100%;
 }
 h1, h2, h3, h4, h5 {
   font-family: 'Montserrat', sans-serif;
@@ -30,8 +36,58 @@ h1, h2, h3, h4, h5 {
   font-weight: 800;
   color: $colorDefault;
 }
+.h1 {
+  display: block;
+  font-size: 2em;
+  -webkit-margin-before: 0.67em;
+  -webkit-margin-after: 0.67em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+}
+a {
+  text-decoration: none;
+  color: $colorAccent;
+}
 ul, ol {
   padding-left: 30px;
+}
+select {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 10px 30px 10px 15px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  line-height: 26px;
+  color: $colorText;
+  background: #fff;
+  border: 1px solid $colorBorder;
+  border-radius: 0;
+  cursor: pointer;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+label {
+  display: block;
+  margin: 10px 0 5px 0;
+  font-family: 'Montserrat';
+  font-size: 14px;
+  text-transform: uppercase;
+  color: $colorDefault;
+}
+input {
+  display: block;
+  width: 100%;
+  padding: 10px 15px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  line-height: 26px;
+  color: $colorText;
+  border: 1px solid $colorBorder;
+  border-radius: 0;
+  cursor: pointer;
+  -moz-appearance: none;
+  -webkit-appearance: none;
 }
 
 /* Global
@@ -49,9 +105,33 @@ ul, ol {
   border-radius: 2px;
   border: 0;
   cursor: pointer;
-  appearance: none;
   &:hover {
     opacity: 0.75;
+  }
+}
+.select-wrapper {
+  position: relative;
+  cursor: pointer;
+}
+.select-arrow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 5;
+  width: 14px;
+  height: 48px;
+  margin: 0 10px;
+  pointer-events: none;
+  svg {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+  }
+}
+.loader {
+  img {
+    margin: 0 auto;
   }
 }
 
@@ -59,7 +139,7 @@ ul, ol {
 =================================*/
 .header {
   margin-bottom: 40px;
-  padding: 20px;
+  padding: 20px 0;
   border-bottom: 1px solid $colorBorder;
 }
 .logo {
@@ -91,13 +171,108 @@ ul, ol {
   text-decoration: none;
   text-transform: uppercase;
   color: $colorDefault;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
   &:hover {
     color: $colorAccent;
+  }
+}
+.cart-count {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  min-width: 26px;
+  height: 26px;
+  margin-left: 3px;
+  padding: 0 5px;
+  text-align: center;
+  line-height: 26px;
+  color: #fff;
+  background: $colorAccent;
+  border-radius: 20px;
+  opacity: 0;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  &.has-items {
+    position: static;
+    opacity: 1;
   }
 }
 
 /* Product
 =================================*/
+.product-image {
+  position: relative;
+  img {
+    position: relative;
+    z-index: 10;
+  }
+}
+.product-image-background {
+  position: absolute;
+  top: 0;
+  left: -100px;
+  z-index: 5;
+  width: calc(100% + 100px);
+  font-family: 'Montserrat';
+  font-size: 100px;
+  line-height: 100px;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-align: left;
+  color: #000;
+  opacity: 0.05;
+}
 .product-title {
   font-weight: 800;
+}
+.product-variant-selector {
+  max-width: 320px;
+}
+.quantity {
+  display: inline-block;
+  width: 100%;
+  max-width: 70px;
+}
+.product-price {
+  margin: 30px 0;
+}
+.add-to-cart-wrapper {
+  display: inline-block;
+}
+.add-to-cart {
+  width: 100%;
+  min-width: 320px;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+.add-to-cart-success {
+  background: $colorSuccess;
+}
+.product-success {
+  display: block;
+  margin: 5px 0;
+  font-size: 12px;
+}
+
+/* Cart
+=================================*/
+.cart-header {
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid $colorBorder;
+  h5 {
+    margin: 0;
+  }
+}
+
+/* Responsive
+=================================*/
+@media screen and (max-width: 768px) {
+  .product-image {
+    img {
+      margin: 0 auto;
+    }
+  }
 }
