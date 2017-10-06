@@ -49,9 +49,8 @@ function cartCount(){
 }
 
 function buildCart(){
-  var cartHTML = cart.lineItems.map(function (lineItem) {
-    return '\
-    <div class="cart-row">\
+  var cartLineItems = cart.lineItems.map(function (lineItem) {
+    return '<div class="cart-row">\
       <div class="grid">\
         <div class="col-2">\
           <img src="'+lineItem.image.variants[5].src+'">\
@@ -61,18 +60,43 @@ function buildCart(){
           <p><em>'+lineItem.variant_title+'</em></p>\
         </div>\
         <div class="col-2 text-right">\
-          <h3>'+lineItem.price+'</h3>\
+          <p class="cart-item">$'+lineItem.price+'</p>\
         </div>\
         <div class="col-2 text-right">\
           <input class="quantity" type="number" value="'+lineItem.quantity+'" data-variant-id="'+lineItem.variant_id+'" />\
         </div>\
         <div class="col-2 text-right">\
-          <h3>'+lineItem.line_price+'</h3>\
+          <p class="cart-item">$'+lineItem.line_price+'</p>\
         </div>\
       </div>\
     </div>';
-  });
-  $('#cart').append(cartHTML);
+  }).join('\n');
+  var cartTotals = '\
+    <div class="cart-footer">\
+      <div class="grid">\
+        <div class="col-9"></div>\
+        <div class="col-3">\
+          <div class="cart-footer-row">\
+            <div class="grid">\
+              <div class="col-6">\
+                <h5>Subtotal</h5>\
+              </div>\
+              <div class="col-6 text-right">\
+                <p>$'+cart.subtotal+'</p>\
+              </div>\
+            </div>\
+          </div>\
+          <div class="cart-footer-row">\
+            <div class="grid">\
+              <div class="col-12">\
+                <a class="btn btn--full checkout" href="'+cart.checkoutUrl+'">Checkout</a>\
+              </div>\
+            </div>\
+          </div>\
+        </div>\
+      </div>\
+    </div>';
+  $('#cart').html(cartLineItems+cartTotals);
 }
 
 /* ============================================================
@@ -80,6 +104,7 @@ function buildCart(){
 ============================================================= */
 function findCartItemByVariantId(variantId) {
   return cart.lineItems.filter(function (item) {
+    console.log(item.variant_id, variantId)
     return (item.variant_id === variantId);
   })[0];
 }
@@ -88,8 +113,8 @@ function findCartItemByVariantId(variantId) {
   Determine action for variant adding/updating/removing
 ============================================================= */
 function addOrUpdateVariant(variantID, quantity) {
-  var cartLineItem = findCartItemByVariantId(variantID);
-  console.log(cartLineItem)
+  var variantIdNum = Number(variantID);
+  var cartLineItem = findCartItemByVariantId(variantIdNum);
   if (cartLineItem) {
     updateVariantInCart(cartLineItem, quantity);
   } else {

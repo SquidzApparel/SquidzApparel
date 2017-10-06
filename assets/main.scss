@@ -108,6 +108,9 @@ input {
   &:hover {
     opacity: 0.75;
   }
+  &.btn--full {
+    width: 100%;
+  }
 }
 .select-wrapper {
   position: relative;
@@ -182,12 +185,13 @@ input {
   top: 0;
   left: 0;
   display: inline-block;
-  min-width: 26px;
-  height: 26px;
+  min-width: 22px;
+  height: 22px;
   margin-left: 3px;
   padding: 0 5px;
+  font-size: 12px;
+  line-height: 22px;
   text-align: center;
-  line-height: 26px;
   color: #fff;
   background: $colorAccent;
   border-radius: 20px;
@@ -259,11 +263,67 @@ input {
 /* Cart
 =================================*/
 .cart-header {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   padding-bottom: 10px;
   border-bottom: 1px solid $colorBorder;
   h5 {
     margin: 0;
+  }
+}
+.cart-row {
+  margin-bottom: 20px;
+  border-bottom: 1px solid $colorBorder;
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+.cart-item {
+  margin: 0;
+  line-height: 48px;
+}
+
+/* Footer
+=================================*/
+.footer {
+  margin-top: 40px;
+  padding: 40px 0;
+  border-top: 1px solid $colorBorder;
+}
+.footer-logo {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0;
+}
+.footer-nav {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 0 0 40px;
+  padding: 0;
+  line-height: 14px;
+  cursor: pointer;
+  li {
+    display: block;
+    margin-bottom: 10px;
+  }
+}
+.footer-social {
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 16px;
+  color: $colorDefault;
+  &:hover {
+    color: $colorAccent;
+  }
+}
+.footer-bottom {
+  padding: 10px 0;
+  border-top: 1px solid $colorBorder;
+  p {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $colorDefaultLight;
   }
 }
 
