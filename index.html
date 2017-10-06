@@ -19,6 +19,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://sdks.shopifycdn.com/js-buy-sdk/v0/latest/shopify-buy.umd.polyfilled.min.js"></script>
   <script defer src="/assets/regular.min.js"></script>
+  <script defer src="/assets/brands.min.js"></script>
   <script defer src="/assets/fontawesome.js"></script>
   <script src="/assets/scripts.js"></script>
   
@@ -48,7 +49,7 @@
       <div class="col-5 text-right nav-right">
         <a class="nav-link" href="/">About</a>
         <a class="nav-link" href="/">Faqs</a>
-        <a class="nav-link" href="/cart">Cart <div class="cart-count"></div></a>
+        <a class="nav-link" href="/cart"><i class="far fa-shopping-cart"></i> <div class="cart-count"></div></a>
       </div>
 
     </div>
@@ -97,35 +98,36 @@
 
     </main>
 
-    <footer class="site-footer">
+    <footer class="footer">
+  <div class="container">
 
-  <div class="wrapper">
-
-    <h2 class="footer-heading">Squidz Apparel</h2>
-
-    <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
-        <ul class="contact-list">
-          <li>
-            
-              Squidz Apparel
-            
-            </li>
-            
-            <li><a href="mailto:justinpatenaude92@gmail.com">justinpatenaude92@gmail.com</a></li>
-            
+    <div class="grid">
+      <div class="col-6">
+        <a class="footer-logo" href="/"><img src="/assets/images/logo.svg"/></a>
+        <ul class="footer-nav">
+          <li class="nav-link">Hats</li>
+          <li class="nav-link">Tshirts</li>
+          <li class="nav-link">Hoodies</li>
+          <li class="nav-link">Shoes</li>
+        </ul>
+        <ul class="footer-nav">
+          <li class="nav-link">About</li>
+          <li class="nav-link">Faqs</li>
+          <li class="nav-link">Cart</li>
         </ul>
       </div>
-
-      <div class="footer-col footer-col-3">
-        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
-</p>
+      <div class="col-6 text-right">
+        <a class="footer-social" href="/"><i class="fab fa-facebook-square fa-2x"></i></a>
+        <a class="footer-social" href="/"><i class="fab fa-twitter-square fa-2x"></i></a>
+        <a class="footer-social" href="/"><i class="fab fa-instagram fa-2x"></i></a>
       </div>
     </div>
 
   </div>
-
 </footer>
+<div class="footer-bottom text-center">
+  <p>Squidz Apparel © 2017</p>
+</div>
 
 
   </body>
