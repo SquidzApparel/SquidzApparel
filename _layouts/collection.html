@@ -1,0 +1,35 @@
+---
+layout: default
+---
+<div class="collection">
+  <div class="container">
+    <div class="grid">
+      <div class="col-12">
+        <h1>{{ page.title }}</h1>
+      </div>
+    </div>
+    <div id="collection">
+      {% include loader.html %}
+    </div>
+  </div>
+</div>
+
+<script>
+$(function () {
+  shopClient.fetchQueryProducts({collection_id: '{{ page.collection_id }}', sort_by: 'collection-default' }).then(function (products) {
+    console.log(products);
+    var productHTML = "";
+    for (i = 0; i < products.length; i++) {
+      var product = products[i];
+      productHTML = productHTML + '<div class="col-3">\
+          <div class="collection-product">\
+            <a href="/products/'+product.attrs.handle+'" class="collection-product-image"><img src="'+product.images[0].variants[6].src+'" /></a>\
+            <h3>'+product.title+'</h3>\
+            <h3>$'+product.selectedVariant.price+'</h3>\
+          </div>\
+        </div>'
+    }
+    $('#collection').html('<div class="grid">'+productHTML+'</div>');
+  });
+});
+</script>

@@ -28,7 +28,7 @@ github_username:  jekyll
 markdown: kramdown
 port: 4002
 collections:
-  test:
+  collections:
     output: true
     permalink: /:collection/:path
   products:
