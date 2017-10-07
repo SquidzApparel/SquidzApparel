@@ -2101,6 +2101,11 @@ input {
 
 /* Cart
 =================================*/
+.collection-product-image {
+  display: block; }
+
+/* Cart
+=================================*/
 .cart-header {
   margin-bottom: 20px;
   padding-bottom: 10px;

@@ -6,15 +6,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Squidz Apparel</title>
-  <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search resu...">
+  <title>Hats</title>
+  <meta name="description" content="The world is being invaded by squid aliens and you are humanity’s last hope. What’s left for you to do? Show your new cephalopod overlords that you are on th...">
 
   <link rel="icon" type="image/png" href="/favicon.png" />
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:800,800i" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i" rel="stylesheet">
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="https://squidzapparel.com/404.html">
+  <link rel="canonical" href="https://squidzapparel.com/collections/hats">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://sdks.shopifycdn.com/js-buy-sdk/v0/latest/shopify-buy.umd.polyfilled.min.js"></script>
@@ -60,27 +60,40 @@
 
 
     <main class="content" aria-label="Content">
-      <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
-
-<div class="container">
-  <h1>404</h1>
-
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
+      <div class="collection">
+  <div class="container">
+    <div class="grid">
+      <div class="col-12">
+        <h1>Hats</h1>
+      </div>
+    </div>
+    <div id="collection">
+      <div class="loader">
+  <img src="/assets/images/loading.gif"/>
+</div>
+    </div>
+  </div>
 </div>
 
+<script>
+$(function () {
+  shopClient.fetchQueryProducts({collection_id: '6481641501', sort_by: 'collection-default' }).then(function (products) {
+    console.log(products);
+    var productHTML = "";
+    for (i = 0; i < products.length; i++) {
+      var product = products[i];
+      productHTML = productHTML + '<div class="col-3">\
+          <div class="collection-product">\
+            <a href="/products/'+product.attrs.handle+'" class="collection-product-image"><img src="'+product.images[0].variants[6].src+'" /></a>\
+            <h3>'+product.title+'</h3>\
+            <h3>$'+product.selectedVariant.price+'</h3>\
+          </div>\
+        </div>'
+    }
+    $('#collection').html('<div class="grid">'+productHTML+'</div>');
+  });
+});
+</script>
     </main>
 
     <footer class="footer">
