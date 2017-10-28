@@ -12,6 +12,14 @@ $colorAccent: #1ABC9C;
 $colorText: #666666;
 $colorSuccess: #2ecc71;
 
+@mixin gradient($color1, $color2){
+  background: $color1;
+  background: -moz-linear-gradient(left, $color1 0%, $color2 100%);
+  background: -webkit-linear-gradient(left, $color1 0%,$color2 100%);
+  background: linear-gradient(to right, $color1 0%,$color2 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$color1, endColorstr=$color2,GradientType=1 );
+}
+
 /* Default
 =================================*/
 * {
@@ -112,6 +120,14 @@ input {
     width: 100%;
   }
 }
+.btn-empty {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  line-height: 21px;
+  text-transform: uppercase;
+  font-weight: 800;
+}
 .select-wrapper {
   position: relative;
   cursor: pointer;
@@ -204,6 +220,30 @@ input {
   }
 }
 
+/* Home
+=================================*/
+.home-banner {
+  h5 {
+    margin: 0;
+    font-style: italic;
+    color: #fff;
+  }
+  h2 {
+    margin: 0;
+    color: #fff;
+  }
+}
+.home-banner-top {
+  min-height: 100px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  @include gradient(#52f1d2, #1abc9c);
+}
+.home-banner-bottom {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 /* Product
 =================================*/
 .product-image {
@@ -260,11 +300,42 @@ input {
   font-size: 12px;
 }
 
-/* Cart
+/* Collection
 =================================*/
+.collection-product-wrapper {
+  .collection-product {
+    border: 1px solid $colorBorder;
+    border-left: 0;
+  }
+  &:first-of-type {
+    .collection-product {
+      border-left: 1px solid $colorBorder;
+    }
+  }
+}
+.collection-product {
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+  &:hover {
+    background: $colorBorder;
+  }
+}
 .collection-product-image {
   display: block;
+  padding: 50px 20px;
 }
+.collection-product-info {
+  padding: 0 10px 20px 10px;
+  text-align: center;
+}
+.collection-product-title {
+  margin: 0;
+  font-size: 16px;
+}
+.collection-product-price {
+  margin: 0;
+}
+
 
 /* Cart
 =================================*/

@@ -21,15 +21,17 @@ $(function () {
     var productHTML = "";
     for (i = 0; i < products.length; i++) {
       var product = products[i];
-      productHTML = productHTML + '<div class="col-3">\
+      productHTML = productHTML + '<div class="col-fifth collection-product-wrapper">\
           <div class="collection-product">\
             <a href="/products/'+product.attrs.handle+'" class="collection-product-image"><img src="'+product.images[0].variants[6].src+'" /></a>\
-            <h3>'+product.title+'</h3>\
-            <h3>$'+product.selectedVariant.price+'</h3>\
+            <div class="collection-product-info">\
+              <h3 class="collection-product-title">'+product.title+'</h3>\
+              <p class="collection-product-price">$'+product.selectedVariant.price+'</p>\
+            </div>\
           </div>\
         </div>'
     }
-    $('#collection').html('<div class="grid">'+productHTML+'</div>');
+    $('#collection').html('<div class="grid-noGutter">'+productHTML+'</div>');
   });
 });
 </script>

@@ -1,38 +1,16 @@
 ---
 layout: default
 ---
-
-<div class="home">
-
-  <h1 class="page-heading">Posts</h1>
-  
-  {{ content }}
-
-  <ul class="post-list">
-    {% for product in site.products %}
-      <li>
-        <h2>
-          <a class="post-link" href="{{ product.url | relative_url }}">{{ product.title | escape }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <hr />
-
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
-
+<div class="home-banner">
+  <div class="grid-bottom home-banner-top">
+    <div class="col-6 text-right">
+      <h5>New product!</h5>
+      <h2>Squid Invader Hat</h2>
+    </div>
+  </div>
+  <div class="grid home-banner-bottom">
+    <div class="col-6 text-right">
+      <a class="btn-empty" href="/squid-invader-hat">View Product <i class="far fa-arrow-alt-circle-right fa-lg"></i></a>
+    </div>
+  </div>
 </div>

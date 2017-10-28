@@ -36,6 +36,7 @@ $glp_col-9: ($glp_col-1*9);
 $glp_col-10: ($glp_col-1*10);
 $glp_col-11: ($glp_col-1*11);
 $glp_col-12: 100%;
+$glp_col-fifth: 20%;
 
 $glp_col-5-12: (100%/5);
 $glp_col-7-12: (100%/7);
@@ -59,6 +60,7 @@ $glp_col-11-12: (100%/11);
   [class*="#{$grid}-10"] > .col, [class*="#{$grid}-10"] > [class*='col-']{ -webkit-flex-basis: $glp_col-10-12; -ms-flex-preferred-size: $glp_col-10-12; flex-basis: $glp_col-10-12; max-width: $glp_col-10-12; }
   [class*="#{$grid}-11"] > .col, [class*="#{$grid}-11"] > [class*='col-']{ -webkit-flex-basis: $glp_col-11-12; -ms-flex-preferred-size: $glp_col-11-12; flex-basis: $glp_col-11-12; max-width: $glp_col-11-12; }
   [class*="#{$grid}-12"] > .col, [class*="#{$grid}-12"] > [class*='col-']{ -webkit-flex-basis: $glp_col-1; -ms-flex-preferred-size: $glp_col-1; flex-basis: $glp_col-1; max-width: $glp_col-1; }
+  [class*="#{$grid}-fifth"] > .col, [class*="#{$grid}-fifth"] > [class*='col-']{ -webkit-flex-basis: $glp_col-fifth; -ms-flex-preferred-size: $glp_col-fifth; flex-basis: $glp_col-fifth; max-width: $glp_col-fifth; }  
 
   html.lte-ie9 [class*="#{$grid}-1"] > .col, html.lte-ie9 [class*="#{$grid}-1"] > [class*='col-']{ -webkit-flex-basis: $glp_col-12; -ms-flex-preferred-size: $glp_col-12; flex-basis: $glp_col-12; width: $glp_col-12; }
   html.lte-ie9 [class*="#{$grid}-2"] > .col, html.lte-ie9 [class*="#{$grid}-2"] > [class*='col-']{ -webkit-flex-basis: $glp_col-6; -ms-flex-preferred-size: $glp_col-6; flex-basis: $glp_col-6; width: $glp_col-6; }
@@ -72,6 +74,7 @@ $glp_col-11-12: (100%/11);
   html.lte-ie9 [class*="#{$grid}-10"] > .col, html.lte-ie9 [class*="#{$grid}-10"] > [class*='col-']{ -webkit-flex-basis: $glp_col-10-12; -ms-flex-preferred-size: $glp_col-10-12; flex-basis: $glp_col-10-12; width: $glp_col-10-12; }
   html.lte-ie9 [class*="#{$grid}-11"] > .col, html.lte-ie9 [class*="#{$grid}-11"] > [class*='col-']{ -webkit-flex-basis: $glp_col-11-12; -ms-flex-preferred-size: $glp_col-11-12; flex-basis: $glp_col-11-12; width: $glp_col-11-12; }
   html.lte-ie9 [class*="#{$grid}-12"] > .col, html.lte-ie9 [class*="#{$grid}-12"] > [class*='col-']{ -webkit-flex-basis: $glp_col-1; -ms-flex-preferred-size: $glp_col-1; flex-basis: $glp_col-1; width: $glp_col-1; }
+  html.lte-ie9 [class*="#{$grid}-fifth"] > .col, html.lte-ie9 [class*="#{$grid}-fifth"] > [class*='col-']{ -webkit-flex-basis: $glp_col-fifth; -ms-flex-preferred-size: $glp_col-fifth; flex-basis: $glp_col-fifth; width: $glp_col-fifth; }
 }
 
 // Function to generate the grid by columns
@@ -90,6 +93,7 @@ $glp_col-11-12: (100%/11);
     > [class*="#{$col}-10"]{ -webkit-flex-basis: $glp_col-10; -ms-flex-preferred-size: $glp_col-10; flex-basis: $glp_col-10;max-width: $glp_col-10;}
     > [class*="#{$col}-11"]{ -webkit-flex-basis: $glp_col-11; -ms-flex-preferred-size: $glp_col-11; flex-basis: $glp_col-11;max-width: $glp_col-11;}
     > [class*="#{$col}-12"]{ -webkit-flex-basis: $glp_col-12; -ms-flex-preferred-size: $glp_col-12; flex-basis: $glp_col-12;max-width: $glp_col-12;}
+    > [class*="#{$col}-fifth"]{ -webkit-flex-basis: $glp_col-fifth; -ms-flex-preferred-size: $glp_col-fifth; flex-basis: $glp_col-fifth;max-width: $glp_col-fifth;}
 		> [class*="#{$col}-first"]{ -webkit-order: -1; -ms-flex-order: -1; order: -1;}
 		> [class*="#{$col}-last"]{ -webkit-order: 1; -ms-flex-order: 1; order: 1;}
   }
@@ -106,6 +110,7 @@ $glp_col-11-12: (100%/11);
     > [class*="#{$col}-10"]{ -webkit-flex-basis: $glp_col-10; -ms-flex-preferred-size: $glp_col-10; flex-basis: $glp_col-10;width: $glp_col-10;}
     > [class*="#{$col}-11"]{ -webkit-flex-basis: $glp_col-11; -ms-flex-preferred-size: $glp_col-11; flex-basis: $glp_col-11;width: $glp_col-11;}
     > [class*="#{$col}-12"]{ -webkit-flex-basis: $glp_col-12; -ms-flex-preferred-size: $glp_col-12; flex-basis: $glp_col-12;width: $glp_col-12;}
+    > [class*="#{$col}-fifth"]{ -webkit-flex-basis: $glp_col-fifth; -ms-flex-preferred-size: $glp_col-fifth; flex-basis: $glp_col-fifth;width: $glp_col-fifth;}
   }
 }
 
@@ -126,6 +131,7 @@ $glp_col-11-12: (100%/11);
     > [data-push-left*="#{$off}-9"]{ margin-left: $glp_col-9; }
     > [data-push-left*="#{$off}-10"]{ margin-left: $glp_col-10; }
     > [data-push-left*="#{$off}-11"]{ margin-left: $glp_col-11; }
+    > [data-push-left*="#{$off}-fifth"]{ margin-left: $glp_col-fifth; }
 
     > [data-push-right*="#{$off}-0"]{ margin-right: 0; }
     > [data-push-right*="#{$off}-1"]{ margin-right: $glp_col-1; }
@@ -140,6 +146,7 @@ $glp_col-11-12: (100%/11);
     > [data-push-right*="#{$off}-9"]{ margin-right: $glp_col-9; }
     > [data-push-right*="#{$off}-10"]{ margin-right: $glp_col-10; }
     > [data-push-right*="#{$off}-11"]{ margin-right: $glp_col-11; }
+    > [data-push-right*="#{$off}-fifth"]{ margin-right: $glp_col-fifth; }
   }
 }
 
